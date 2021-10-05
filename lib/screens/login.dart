@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:bike_project/screens/signUp.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -29,12 +31,46 @@ class Login extends StatelessWidget {
                     Text("Join Us"),
                     Spacer(),
                     FloatingActionButton.extended(
-                      onPressed: () {},
+                      heroTag: "Btn1",
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (_) => SignUp(),
+                          ),
+                        );
+                      },
                       label: Text("Sign Up Here"),
                     ),
                   ],
                 ),
               ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width * 0.75,
+              padding: EdgeInsets.all(10),
+              child: TextFormField(
+                obscureText: true,
+                obscuringCharacter: 'X',
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: "Phone Number",
+                ),
+                validator: RequiredValidator(
+                    errorText: "Please enter valid Phone Number"),
+                onSaved: (nvalue) {},
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            FloatingActionButton.extended(
+              heroTag: "Btn2",
+              onPressed: () {},
+              label: Text("Login"),
             ),
           ],
         ),
