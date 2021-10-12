@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bike_project/screens/home.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:bike_project/screens/signUp.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +70,13 @@ class Login extends StatelessWidget {
             ),
             FloatingActionButton.extended(
               heroTag: "Btn2",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => HomePage(),
+                  ),
+                );
+              },
               label: Text("Login"),
             ),
           ],

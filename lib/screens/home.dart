@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:bike_project/widgets/autocomplete_list.dart';
 
 class HomePage extends StatelessWidget {
   //const HomePage({ Key? key }) : super(key: key);
@@ -11,7 +12,18 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home"),
       ),
-      //:
+      body: Padding(
+        padding: EdgeInsets.all(15),
+        child: Column(
+          children: <Widget>[
+            AutocompleteList("Source Station*"),
+            SizedBox(
+              height: 20,
+            ),
+            AutocompleteList("Destination Station*"),
+          ],
+        ),
+      ),
     );
   }
 }
