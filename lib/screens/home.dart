@@ -21,6 +21,13 @@ class HomePage extends StatelessWidget {
               height: 20,
             ),
             AutocompleteList("Destination Station*"),
+            SizedBox(
+              height: 20,
+            ),
+            FloatingActionButton.extended(
+              onPressed: () {},
+              label: Text("Submit Details"),
+            ),
           ],
         ),
       ),
